@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff4d6d,#7b2ff7);
+    overflow:hidden;
+}
+
+.card{
+    text-align:center;
+    color:white;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(12px);
+    padding:40px;
+    border-radius:20px;
+    width:90%;
+    max-width:700px;
+    box-shadow:0 0 20px rgba(255,255,255,.3);
+}
+
+h1{
+    font-size:55px;
+    animation:glow 2s infinite alternate;
+}
+
+h2{
+    margin:15px 0;
+    font-size:30px;
+}
+
+p{
+    font-size:20px;
+    line-height:35px;
+    margin-top:20px;
+}
+
+button{
+    margin-top:30px;
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    background:white;
+    color:#ff1493;
+    font-size:20px;
+    cursor:pointer;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px white;
+    }
+    to{
+        text-shadow:0 0 30px yellow,0 0 50px white;
+    }
+}
+
+.heart{
+    position:absolute;
+    bottom:-50px;
+    font-size:25px;
+    animation:fly 6s linear infinite;
+}
+
+@keyframes fly{
+    from{
+        transform:translateY(0);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div class="card">
+
+<h1>🎉 Happy Birthday 🎉</h1>
+
+<h2>❤️ Dear My Special Person ❤️</h2>
+
+<p>
+On this beautiful day, I wish you endless happiness,
+good health, success, and lots of love. 💖<br><br>
+
+May every dream of yours come true, and may your smile
+always shine brighter than the stars. ✨<br><br>
+
+🎂 Have a wonderful birthday! 🎂<br>
+Always loves by me kalai ehh🥹🤍
+</p>
+
+<button onclick="alert('🎉 Once Again... Happy Birthday! ❤️')">
+Finish 🎁
+</button>
+
+</div>
+
+<script>
+function hearts(){
+    const heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(20+Math.random()*25)+"px";
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },6000);
+}
+
+setInterval(hearts,300);
+</script>
+
+</body>
+</html>

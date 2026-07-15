@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Beautiful Memories ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#ff4d6d,#6c63ff);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    text-align:center;
+}
+
+h1{
+    color:white;
+    margin-bottom:20px;
+}
+
+.gallery{
+    width:350px;
+    height:500px;
+    margin:auto;
+    overflow:hidden;
+    border-radius:20px;
+    box-shadow:0 0 25px rgba(255,255,255,.6);
+}
+
+.gallery img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.buttons{
+    margin-top:20px;
+}
+
+button{
+    padding:12px 25px;
+    margin:8px;
+    border:none;
+    border-radius:30px;
+    font-size:17px;
+    cursor:pointer;
+    background:white;
+    color:#ff4d6d;
+    font-weight:bold;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+#count{
+    color:white;
+    font-size:22px;
+    margin-top:15px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📸 Our Beautiful Memories ❤️</h1>
+
+<div class="gallery">
+<img id="photo" src="images/photo1.jpeg">
+<img id="photo" src="images/photo2.jpeg">
+<img id="photo" src="images/photo3.jpeg">
+<img id="photo" src="images/photo4.jpeg">
+<img id="photo" src="images/photo5.jpeg">
+</div>
+
+<div class="buttons">
+<button onclick="prev()">⬅ Previous</button>
+<button onclick="next()">Next ➡</button>
+</div>
+
+<p id="count">1 / 4</p>
+
+<button onclick="window.location.href='final.html'">
+🎁 Next
+</button>
+
+</div>
+
+<script>
+
+const photos=[
+"images/photo1.jpeg",
+"images/photo2.jpeg",
+"images/photo3.jpeg",
+"images/photo4.jpeg",
+"images/photo5.jpeg"
+];
+
+let index=0;
+
+function showPhoto(){
+document.getElementById("photo").src=photos[index];
+document.getElementById("count").innerHTML=(index+1)+" / "+photos.length;
+}
+
+function next(){
+index++;
+if(index>=photos.length){
+index=0;
+}
+showPhoto();
+}
+
+function prev(){
+index--;
+if(index<0){
+index=photos.length-1;
+}
+showPhoto();
+}
+
+showPhoto();
+
+// Auto slideshow every 3 seconds
+setInterval(next,3000);
+
+</script>
+
+</body>
+</html>
